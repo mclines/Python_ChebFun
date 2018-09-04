@@ -59,7 +59,7 @@ fig,c = plt.subplots()
 c.step(grid,f(grid))
 p02 = cheb.Chebyshev.interpolate(f,25)
 c.plot(grid,p02(grid))
-plt.savefig('figures/ch02/figures05.png')
+plt.savefig('figures/ch02/figure05.png')
 
 fig,d = plt.subplots()
 d.step(grid,f(grid))
