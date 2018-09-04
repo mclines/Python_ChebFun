@@ -55,8 +55,8 @@ p = cheb.Chebyshev.interpolate(f,5)
 
 b.plot(grid,p(grid))
 
-#for i in grid:
-#  if p(i) == f(i):
-#    b.scatter(p(i),f(i))
+for i in grid:
+  if p(i) == f(i):
+    b.scatter(p(i),f(i))
 
 plt.savefig('figures/ch02/figure04.png')
