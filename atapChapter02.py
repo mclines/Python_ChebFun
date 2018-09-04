@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import chebyshevFunctions as cf
 
 # Any interval [a,b] can be scaled to [-1,1] so we will focus on [-1,1]. 
 
@@ -16,11 +17,21 @@ tt = np.linspace(0,math.pi,n+1)
 zz = np.exp(1j*tt)
 
 # Here we will initialize our figure and subplots for matplotlib.
-fig,k = plt.subplots()
+fig,a = plt.subplots()
 
 # This will build our desired plot as shown in figure01 on page 7 of the text.
-k.plot(np.real(zz),np.imag(zz))
+a.plot(np.real(zz),np.imag(zz))
 
 # This will save our plot to figure01.png
-plt.savefig('figure01.png')
+plt.savefig('figures/ch02/figure01.png')
+
+# The chebyshev points with respect to parameter n are just the real parts of the (2n)th roots of unity in the upper half of the complex plane. Note that including the (2n)th roots of unity in the lower half of the complex plane would just repeat the same list of numbers since they would share the same real parts. 
+
+
+XX = cf.chebpts(n)
+r = np.array([0]*len(XX))
+a.plot(XX,r)
+
+plt.savefig('figures/ch02/figure02.png')
+
 
