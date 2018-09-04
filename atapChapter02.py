@@ -21,7 +21,7 @@ fig,a = plt.subplots()
 
 # This will build our desired plot as shown in figure01 on page 7 of the text.
 a.scatter(np.real(zz),np.imag(zz))
-
+a.plot(np.real(zz),np.imag(zz))
 # This will save our plot to figure01.png
 plt.savefig('figures/ch02/figure01.png')
 
@@ -31,7 +31,20 @@ plt.savefig('figures/ch02/figure01.png')
 XX = cf.chebpts(n)
 r = np.array([0]*len(XX))
 a.scatter(XX,r)
+a.plot(XX,r)
+
+plt.savefig('figures/ch02/figure02.png')
+
+
+def f(x):
+  '''
+A simple step function for use in examples throughout the rest of chapter 02. 
+  '''
+  result = np.sign(x) - (1/2)*x
+  return result
+
+fig,b = plt.subplots()
+
+b.plot(XX,f(XX)) 
 
 plt.savefig('figures/ch02/figure03.png')
-
-
