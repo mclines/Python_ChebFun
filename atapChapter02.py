@@ -44,7 +44,8 @@ A simple step function for use in examples throughout the rest of chapter 02.
   return result
 
 fig,b = plt.subplots()
+grid = np.linspace(-1,1,50)
 
-b.plot(XX,f(XX)) 
+b.plot(grid,f(grid)) 
 
 plt.savefig('figures/ch02/figure03.png')
