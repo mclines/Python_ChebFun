@@ -51,15 +51,26 @@ b.step(grid,f(grid))
 
 plt.savefig('figures/ch02/figure03.png')
 
-p = cheb.Chebyshev.interpolate(f,5)
+p01 = cheb.Chebyshev.interpolate(f,5)
 
 b.plot(grid,p(grid))
 
-intersect = []
-for i in grid:
-  if p(i) == f(i):
-    intersect.append(i) 
-intersect = np.array(intersect)
-b.scatter(intersect,p(intersect))
+for i in range(len(grid)):
+  if p01(grid[i]) == f(grid[i]):
+    b.scatter(grid[i],f(grid[i]))
 
 plt.savefig('figures/ch02/figure04.png')
+
+fig,c = plt.subplots
+
+c.step(grid,f(grid))
+
+p02 = cheb.Chebyshev.interpolate(f,100)
+
+p02.plot(grid,p(grid))
+
+for i in range(len(grid)):
+  if p02(grid[i]) == f(grid[i]):
+    c.scatter(grid[i],f(grid[i]))
+
+plt.savefig('figures/ch02/figure05.png')
