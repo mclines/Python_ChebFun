@@ -33,7 +33,6 @@ XX = cf.chebpts(n)
 r = np.array([0]*len(XX))
 a.scatter(XX,r)
 a.plot(XX,r)
-
 plt.savefig('figures/ch02/figure02.png')
 
 
@@ -46,31 +45,24 @@ A simple step function for use in examples throughout the rest of chapter 02.
 
 fig,b = plt.subplots()
 grid = np.linspace(-1,1,50)
-
 b.step(grid,f(grid)) 
-
 plt.savefig('figures/ch02/figure03.png')
 
 p01 = cheb.Chebyshev.interpolate(f,5)
-
 b.plot(grid,p01(grid))
-
-for i in range(len(grid)):
-  if p01(grid[i]) == f(grid[i]):
-    b.scatter(grid[i],f(grid[i]))
-
+#for i in range(len(grid)):
+#  if p01(grid[i]) == f(grid[i]):
+#    b.scatter(grid[i],f(grid[i]))
 plt.savefig('figures/ch02/figure04.png')
 
 fig,c = plt.subplots()
-
-c.step(grid,f(grid))
-
-p02 = cheb.Chebyshev.interpolate(f,100)
-
+c.step(grid,f(grid)
+p02 = cheb.chebyshev.interpolate(f,25)
 c.plot(grid,p02(grid))
+plt.savefig('figures/ch02/figures05.png')
 
-for i in range(len(grid)):
-  if p02(grid[i]) == f(grid[i]):
-    c.scatter(grid[i],f(grid[i]))
-
-plt.savefig('figures/ch02/figure05.png')
+fig,d = plt.subplots()
+d.step(grid,f(grid))
+p03 = cheb.Chebyshev.interpolate(f,100)
+d.plot(grid,p03(grid))
+plt.savefig('figures/ch02/figure06.png')
