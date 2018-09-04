@@ -55,8 +55,11 @@ p = cheb.Chebyshev.interpolate(f,5)
 
 b.plot(grid,p(grid))
 
+intersect = []
 for i in grid:
   if p(i) == f(i):
-    b.scatter(p(i),f(i))
+    intersect.append(i) 
+intersect = np.array(intersect)
+b.scatter(intersect,p(intersect))
 
 plt.savefig('figures/ch02/figure04.png')
