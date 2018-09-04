@@ -4,6 +4,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import chebyshevFunctions as cf
+import numpy.polynomial.chebyshev as cheb
 
 # Any interval [a,b] can be scaled to [-1,1] so we will focus on [-1,1]. 
 
@@ -49,3 +50,12 @@ grid = np.linspace(-1,1,50)
 b.step(grid,f(grid)) 
 
 plt.savefig('figures/ch02/figure03.png')
+
+p = cheb.Chebyshev.interpolate(f,5)
+
+b.plot(grid,p(grid))
+for i in grid:
+  if p(i) == f(i):
+    b.scatter(p(i),f(i))
+
+plt.savefig('figures/ch02/figure04.png')
