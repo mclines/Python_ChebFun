@@ -20,7 +20,7 @@ zz = np.exp(1j*tt)
 fig,a = plt.subplots()
 
 # This will build our desired plot as shown in figure01 on page 7 of the text.
-a.plot(np.real(zz),np.imag(zz))
+a.scatter(np.real(zz),np.imag(zz))
 
 # This will save our plot to figure01.png
 plt.savefig('figures/ch02/figure01.png')
@@ -30,8 +30,8 @@ plt.savefig('figures/ch02/figure01.png')
 
 XX = cf.chebpts(n)
 r = np.array([0]*len(XX))
-a.plot(XX,r)
+a.scatter(XX,r)
 
-plt.savefig('figures/ch02/figure02.png')
+plt.savefig('figures/ch02/figure03.png')
 
 
