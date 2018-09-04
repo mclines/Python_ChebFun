@@ -53,7 +53,7 @@ plt.savefig('figures/ch02/figure03.png')
 
 p01 = cheb.Chebyshev.interpolate(f,5)
 
-b.plot(grid,p(grid))
+b.plot(grid,p01(grid))
 
 for i in range(len(grid)):
   if p01(grid[i]) == f(grid[i]):
@@ -61,13 +61,13 @@ for i in range(len(grid)):
 
 plt.savefig('figures/ch02/figure04.png')
 
-fig,c = plt.subplots
+fig,c = plt.subplots()
 
 c.step(grid,f(grid))
 
 p02 = cheb.Chebyshev.interpolate(f,100)
 
-p02.plot(grid,p(grid))
+c.plot(grid,p02(grid))
 
 for i in range(len(grid)):
   if p02(grid[i]) == f(grid[i]):
